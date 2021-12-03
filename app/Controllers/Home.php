@@ -4,8 +4,21 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
+    var $session;
+
+	public function __construct(){
+		$this->session = \Config\Services::session();
+	}
+
     public function index()
     {
-        return view('welcome_message');
+        $data['message'] = $this->session->getFlashdata('message');
+        return view('welcome_message',$data);
+    }
+
+    public function dashboard(){
+
+        $data['page'] = 'users/dashboard_view';
+        return view('admin', $data);
     }
 }
