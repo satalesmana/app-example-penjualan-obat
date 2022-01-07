@@ -45,6 +45,8 @@ $routes->group('admin', ['namespace' => 'App\Controllers', 'filter' => 'authfilt
     $routes->get('dashboard', 'Home::dashboard');
     $routes->resource('users', ['controller' =>'UserController', 'except' => 'new,edit']);
     $routes->resource('obat', ['controller' =>'ObatController', 'except' => 'new,edit']);
+    $routes->resource('transaksi/penjualan', ['controller' =>'PenjualanController', 'except' => 'new,edit']);
+    $routes->get('transaksi/penjualan_list', 'PenjualanController::list_penjualan');
 });
 /*
  * --------------------------------------------------------------------

@@ -24,6 +24,21 @@
                  <?php echo anchor('admin/users', '<span data-feather="file-text"></span> Users',  ['class' => 'nav-link']); ?>
             </li>
         </ul>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span>Transaction</span>
+            <a class="link-secondary" href="#" aria-label="Add a new report">
+                <span data-feather="plus-circle"></span>
+            </a>
+        </h6>
+        <ul class="nav flex-column mb-2">
+            <li class="nav-item">
+                <?php echo anchor('admin/transaksi/penjualan', '<span data-feather="file-text"></span> Penjualan',  ['class' => 'nav-link']); ?>
+            </li>
+            <li class="nav-item">
+                <?php echo anchor('admin/transaksi/penjualan_list', '<span data-feather="file-text"></span> Daftar Penjualan',  ['class' => 'nav-link']); ?>
+            </li>
+        </ul>
     </div>
 </nav>
 

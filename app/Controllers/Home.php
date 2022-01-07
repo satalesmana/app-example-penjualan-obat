@@ -19,6 +19,7 @@ class Home extends BaseController
     public function dashboard(){
 
         $data['page'] = 'users/dashboard_view';
+        $data['userlog'] = $this->session->get();
         return view('admin', $data);
     }
 }
