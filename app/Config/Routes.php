@@ -35,6 +35,12 @@ $routes->get('/', 'Home::index');
 $routes->post('/auth/login', 'AuthController::login');
 $routes->get('/auth/logout', 'AuthController::logout');
 
+$routes->resource('/register', ['controller' =>'RegisterController', 
+    'except' => 'show,update,delete,new,edit']);
+    
+$routes->get('/register/list', 'RegisterController::list');
+
+
 $routes->group('admin', ['namespace' => 'App\Controllers', 'filter' => 'authfilter'], function ($routes) {
     $routes->get('dashboard', 'Home::dashboard');
     $routes->resource('users', ['controller' =>'UserController', 'except' => 'new,edit']);
